@@ -1,0 +1,150 @@
+%   COMMANDS ZUM ZUSAMMENBAUEN DER KARTEN
+%   ---------------------------------------
+
+
+%   TikZ/PGF Settings für die Karten
+\pgfmathsetmacro{\cardwidth}{8.4}
+\pgfmathsetmacro{\cardheight}{12.6}
+\pgfmathsetmacro{\imagewidth}{0.9*\cardwidth}
+\pgfmathsetmacro{\imageheight}{0.75*\cardheight}
+\pgfmathsetmacro{\stripwidth}{0.7}
+\pgfmathsetmacro{\strippadding}{0.2}
+\pgfmathsetmacro{\textpadding}{0.1}
+\pgfmathsetmacro{\titley}{\cardheight-\strippadding-1.5*\textpadding-0.5*\stripwidth}
+
+
+%   Formen der einzelnen Kartenelemente/-bestandteile
+\def\shapeCard{(0,0) rectangle(\cardwidth,\cardheight)}
+
+\def\shapeLeftStripLong{(\strippadding,-0.2) rectangle(\strippadding+\stripwidth,0.65*\cardheight-\strippadding-\strippadding-1)}
+
+\def\shapeLeftStripShort{(\strippadding,\cardheight-\strippadding-1) rectangle (\strippadding+\stripwidth,\cardheight+0.2)}
+
+\def\shapeRightStripShort{(\cardwidth-\stripwidth-\strippadding,\cardheight-\strippadding-1) rectangle (\cardwidth-\strippadding,\cardheight+0.2)}
+
+\def\shapeTitleArea{(2*\strippadding+\stripwidth,\cardheight-\strippadding) rectangle (\cardwidth-2*\strippadding-\stripwidth,\cardheight-2*\stripwidth)}
+
+\def\shapeContentArea{(2*\strippadding+\stripwidth,0.65*\cardheight-\strippadding-\strippadding-1) rectangle (\cardwidth+0.2,-0.2)}
+
+
+%   Stylings für die Elemente definieren
+\tikzset{
+    %   runde Ecken für die Karten
+    cardcorners/.style={
+        rounded corners=0.5cm
+    },
+    %   runde Ecken für die "Fähnchen"
+    elementcorners/.style={
+        rounded corners=0.1cm
+    },
+    %   Schlagschatten für die "Fähnchen"
+    stripshadow/.style={
+        drop shadow={
+            opacity=.5,
+            color=black
+        }
+    },
+    %   Style für die "Fähnchen"
+    strip/.style={
+        elementcorners,
+        stripshadow
+    },
+    %   Bild für das Kartenmotiv
+    cardimage/.style n args={2}{
+    	path picture={
+    		\node[below=15mm+ #2] at (0.5*\cardwidth,\cardheight) {
+    			\includegraphics[width=\imagewidth cm]{#1}
+    		};
+    	}
+    },
+}
+
+%   TikZ-Raster
+\newcommand{\carddebug}{
+\draw [step=1,help lines] (0,0) grid (\cardwidth,\cardheight);
+}
+
+%   Rahmen der Karte
+\newcommand{\cardborder}{
+\draw[lightgray,cardcorners] \shapeCard; % Kartenrand in hellgrau
+}
+
+%   Hintergrund der Karte (Außenlinien der Karte mit runden Ecken und Bild)
+\newcommand{\cardbackground}[2]{
+\draw[cardcorners, cardimage={#1}{#2}] \shapeCard;
+}
+
+%   Kategorie der Karte
+\newcommand{\cardtype}[3]{
+    %   First we fill the intersecting area
+    %   The \clip command does not allow options, therefore 
+    %   we have to use a scope to set the even odd rule.
+    \begin{scope}[even odd rule]
+        %   Define a clipping path. All paths outside shapeCard will
+        %   be cut because the even odd rule is set.
+        \clip[cardcorners] \shapeCard;
+        % Fill shapeLeftStripLong and shapeLeftStripShort.
+        %   Since the even odd rule is set, only the card will be filled.
+        \fill[strip,#1] \shapeLeftStripLong node[rotate=90,above left=0.9mm, font=\normalsize] {
+            \color{white} \uppercase{#2}
+        };
+        \fill[strip,#1] \shapeLeftStripShort;
+    \end{scope}
+
+    \node at (\strippadding+\stripwidth-0.28,\cardheight-\strippadding-\strippadding-0.37) {\color{white}#3};
+}
+
+%\newcommand{\cardtypeCircuit}{\cardtype{circuitbg}{Circuit Knowome}{\hspace{-1mm}\Large\floweroneleft}}
+%\newcommand{\cardtypeCircuit}{\cardtype{circuitbg}{Circuit Knowome}{\includegraphics[width= 25pt,  decodearray={0.5 0.1}]{images/schaltzeichen-diode.png}}}
+%\newcommand{\cardtypeCircuit}{\cardtype{circuitbg}{Circuit Knowome}{\hspace{-1mm}\huge\AC}}
+%\newcommand{\cardtypeFormal}{\cardtype{formalbg}{Formal Knowome}{\hspace{-1mm}\Large\lefthand}}
+%\newcommand{\cardtypeCode}{\cardtype{codebg}{Code Knowome}{\hspace{-1mm}\LARGE\aldineleft}}
+%\newcommand{\cardtypeOther}{\cardtype{otherbg}{Other Knowome}{\hspace{-1.4mm}\huge\ding{78}}}
+
+\newcommand{\cardtypeProtect}{\cardtype{violet}{Protection Circuit}{\hspace{-1mm}\huge$\nabla$}}
+\newcommand{\cardtypeFilter}{\cardtype{orange}{Filter Circuit}{\hspace{-1mm}\huge\VHF}}
+\newcommand{\cardtypeTTL}{\cardtype{red}{DTL/TTL Circuit}{\hspace{-1mm}\huge\AC}}
+\newcommand{\cardtypeFET}{\cardtype{lightblue}{FET Circuit}{\hspace{-1mm}\huge\textbrokenbar}}
+\newcommand{\cardtypeOPV}{\cardtype{blue}{OPV Circuit}{\hspace{-1mm}\huge$\rhd$}}
+\newcommand{\cardtypeCircuit}{\cardtype{green}{Circuit Knowome}{\hspace{-1mm}\huge\lightning}}
+\newcommand{\cardtypeBack}{\cardtype{violet}{ \tiny Ravensburg-Weingarten University}{\hspace{-1mm} \tiny RWU}}
+\newcommand{\cardtypeStatistics}{\cardtype{red}{Statistics}{\hspace{-1mm}\huge$\spadesuit$}}
+\newcommand{\cardtypeMeas}{\cardtype{yellow}{Measurement}{\hspace{-1mm}\huge$\nabla$}}
+\newcommand{\cardtypeOther}{\cardtype{black}{Other}{\hspace{-1mm}\huge$\nabla$}}
+\newcommand{\cardtypeSiUnit}{\cardtype{violet}{Other}{\hspace{-1mm}\huge$\nabla$}}
+%   Titel der Karte
+\newcommand{\cardtitle}[1]{
+    %\draw[pattern=soft crosshatch,rounded corners=0.1cm] \shapeTitleArea;
+    \fill[elementcorners,titlebg,opacity=.85] \shapeTitleArea;
+    \node[text width=5.75cm] at (0.5*\cardwidth,\titley) {
+        \begin{center}
+           \color{white}\uppercase{\normalsize #1}
+        \end{center}
+    };
+}
+
+%   Inhalt der Karte
+\newcommand{\cardcontent}[2]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[elementcorners,contentbg] \shapeContentArea;
+    \end{scope}
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,0.5*\cardheight-\textpadding+0.5) {
+        {\baselineskip=8pt \normalsize #1 \par }
+    };
+
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,4.2) {
+        \vrule width \textwidth height 2pt \\[-2pt] 	% schwarze Trennlinie
+        \vspace{0.2cm}
+        {\baselineskip=6pt \scriptsize #2 \par}
+    };
+}
+
+%   Preis der Karte
+\newcommand{\cardprice}[1]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[strip,pricebg] \shapeRightStripShort;
+    \end{scope}
+    \node at (\cardwidth-0.5*\stripwidth-\strippadding,\titley-0.1) {\color{black}#1};
+}

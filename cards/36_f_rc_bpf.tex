@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/rc_bpf.png}{0mm}
+		\cardtypeFilter
+		\cardtitle{band pass filter}
+		\cardcontent{A bandpass is a filter that only allows signals from one frequency band to pass through. The frequency ranges below and above the passband are blocked or significantly attenuated. 	
+		}
+		{The series connection of high pass (HP) and low pass (LP) results in a bandpass if the cutoff frequency of the LP is equal to or greater than that of the HP. The center frequency of the bandpass is also calculated as the geometric mean of the unloaded cutoff frequencies of HP and LP. The mutual loading results in different cutoff frequency values for the bandpass, the geometric mean of which again produces the same center frequency. \\		LP cutoff: $F_{c1}=\frac{1}{2\pi *RC} = 159Hz$\\		HP cutoff: $F_{c2}=\frac{1}{2\pi *RC} = 1,592 kHz$\\		BP center frequency: $F_o =\sqrt{F_{c1}*F_{c2}} = 504Hz$		}
+		\cardprice{26}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

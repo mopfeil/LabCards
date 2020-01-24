@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/dac_flash.png}{0mm}
+		\cardtypeCircuit
+		\cardtitle{DAC - flash}
+		\cardcontent{\fontsize{9}{10}\selectfont The simplest design of a DAC is derived from the summing amp. If the summing resistors are selected in steps of two powers, all bits which are set to logical 1 are summed according to their weight to a voltage.
+		}
+		{This can be easily achieved with a reference voltage source and low impedance FET as switch.\\		Here's the output voltage:\\		$V_{out} = -4R(\frac{V_{ref}}{R}+\frac{V_{ref}}{2R}+\frac{V_{ref}}{4R}+\frac{V_{ref}}{8R})$\\[5pt]		Simplyfied:\\		$V_{out} = -\frac{1}{2}(8V_{ref}+4V_{ref}+2V_{ref}+V_{ref})$\\[5pt]		Advantages: very fast\\		Disadvantages: bad scalability(lower resolution), high power losses and expensive \\					}
+		\cardprice{36}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

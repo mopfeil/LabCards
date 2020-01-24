@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/adc_flash.png}{0mm}
+		\cardtypeCircuit
+		\cardtitle{ADC - Flash}
+		\cardcontent{\fontsize{9}{10}\selectfont The Flash ADC consists of a series of comparators, each one comparing the input signal to a unique reference voltage. The comparator outputs connect to the inputs of a priority encoder circuit, which produces a binary output.			
+		}
+		{The analog input signal is compared simultaneously by all comparators in the flash converter (1 clock). A separate comparator is required for each possible output value. For example, an 8-bit flash converter requires $2^8-1 = 255$ comparators. Three comparators are required for the four possible values of a two-bit converter. The fourth has only the function to signal an overrange and to support the code conversion.\\			Advantages: very fast, simplest in terms of operational theory			\\			Disadvantages: bad scalability(lower resolution), high power losses and expensive \\		}
+		\cardprice{31}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/Fehlerfortpflanzung2.png}{0mm}
+		\cardtypeStatistics
+		\cardtitle{Error Propagation}
+		\cardcontent{\fontsize{9}{10}\selectfont Error propagation means that when a measured value depends on several variables its total error has to be derived from their individual errors.  If we measure a current $I$ that is dependent on a Voltage $V$ and a resistance $R$ as $I=V/R$ the we start by calculating the total derivative $dI = \frac{\partial I}{\partial V}dV + \frac{\partial I}{\partial R}dR$			
+		}
+		{$dI$ represents the deviation of individual measurements. $dI = I_i - \bar{I}$. The squared error is $(dI)^2=( I_i - \bar{I})^2 = (\frac{\partial I}{\partial V}dV)^2 + (\frac{\partial I}{\partial R}dR)^2 + \frac{\partial I}{\partial V} \frac{\partial I}{\partial R} dV dR $. This we can use to calculate absolute errors. For a general error treatment we average over many measurements, whence the mixed term $dV dR$ will average out, and $dV^2$ and $dR^2$ will remain. $\langle(I_i - \bar{I})\rangle = \sigma_I^2 =  (\frac{\partial I}{\partial V}dV)^2 ) + (\frac{\partial I}{\partial R}dR)^2$. The standard deviation is then $\sigma_I = \sqrt{ (\frac{\partial I}{\partial V}dV)^2 ) + (\frac{\partial I}{\partial R}dR)^2}$. In our example  $\sigma_I^2 = \sqrt{ \frac{1}{R^2}dV + \frac{V^2}{R^4}dR}$ and relative (divide by $I=V/R$)  $\frac{\sigma_I}{I}  = \sqrt{ \frac{dV^2}{V^2}  + \frac{dR^2}{R^2}}$}
+		\cardprice{22}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

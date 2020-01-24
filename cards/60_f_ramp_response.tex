@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/ramp_response.png}{0mm}
+		\cardtypeOther
+		\cardtitle{ramp response}
+		\cardcontent{The integration property of linear systems allows the characteristic response $y_{r}(t)$ to a ramp forcing function r(t) to be found by integrating the step response $y_s(t)$.
+		}
+		{			$y_{r}(t) =\int_{0}^{t}y_{s}(t)dt = \int_{0}^{t}(1-e^{-\frac{t}{\tau}}) dt$\\			$\qquad\;\, = t-\tau(1-e^{-\frac{t}{\tau}} )$\\[5pt]					As t becomes large the exponential term decays to zero and the response becomes $y_{r}(t) = t-\tau$ for $t\gg\tau$.\\[5pt]					steady state time lag: $\tau$\\		steady state error: $q_{is}\tau$  \\		with $q_{is}=$ const. change rate \\				}
+		\cardprice{50}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

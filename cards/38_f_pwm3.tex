@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/pwm3.png}{0mm}
+		\cardtypeCircuit
+		\cardtitle{DAC - PWM}
+		\cardcontent{\fontsize{9}{10}\selectfont The pulse width modulation(PWM) is a indirekt method of D/A-convertion. A standard pulse is generated from each period of the input signal. With a downstream RC low-pass filter or better an integrator, this pulse sequence can be averaged.
+		}
+		{This creates ripples in the output voltage. The time constant RC must be selected so that the desired D/A accuracy (e.g. +- 1/2 LSB) is maintained. This results in a slow response time at the output of the converter(\textasciitilde 90µs) and a settling time (\textasciitilde 0.5ms) to charge the capacitance.The largest ripples occur at a duty cycle of 50\%.\\			Advantages: simply to control small DC-motors with it\\			Disadvantages:slow response, ripples at the output\\		}
+		\cardprice{28}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

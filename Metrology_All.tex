@@ -1,0 +1,473 @@
+% Bei längeren Titeln (zwei Zeilen) verschiebt sich die Position der Karte
+% Auflösung images: ca.1000x500px
+
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usepackage{setspace}
+\usetikzlibrary{arrows,shadows} % for pgf-umlsd
+
+
+%   Pakete dazuladen
+\input{libs.tex}
+%   Farbdefinitionen laden
+\input{colors.tex}
+%   \card-Commands laden
+\input{tikzcards.tex}
+
+%   Dummy-Contents
+\newcommand{\contentA}{Neunmalkluges Zitat\\mit Bezug zur Karte von einer fiktiven Figur.}
+\newcommand{\contentB}{Auswirkungen:\\[5pt]Ziehe 2 Karten, nimm 3 Gold, lege alles ab, lauf weg ...}
+
+
+\begin{document}
+\begin{center}
+%    \pagestyle{empty}
+%   V-Space-Korrektur bei langen Titeln
+%   \cardtitle{\vspace{-5mm}SEHR LANGER TITEL}
+
+%%%%%%%%%%%%%%%
+%%  SEITE 1f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/11_f_SI_Units} &
+	\input{cards/12_f_SI_Units} \\
+	\vspace{5mm} & \\
+	\input{cards/13_f_SI_Units} &
+	\input{cards/14_f_SI_Units} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 2b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/12_b_rwu}&
+	\input{cards/11_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/14_b_rwu} &
+	\input{cards/13_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 2f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/15_f_SI_Units} &
+	\input{cards/16_f_SI_Units} \\
+	\vspace{5mm} & \\
+	\input{cards/17_f_SI_Units} &
+	\input{cards/18_f_SI_Units} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 3b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/16_b_rwu}&
+	\input{cards/15_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/18_b_rwu} &
+	\input{cards/17_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 3f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/19_f_voltage_meas} &
+	\input{cards/20_f_current_meas} \\
+	\vspace{5mm} & \\
+	\input{cards/21_f_res_meas} &
+	\input{cards/22_f_wheatstone} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 4b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/20_b_rwu}&
+	\input{cards/19_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/22_b_rwu} &
+	\input{cards/21_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 4f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/23_f_wien_bridge2} &
+	\input{cards/24_f_2_wire_meas} \\
+	\vspace{5mm} & \\
+	\input{cards/25_f_4_wire_meas} &
+	\input{cards/26_f_meas_methods} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 5b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/24_b_rwu}&
+	\input{cards/23_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/26_b_rwu} &
+	\input{cards/25_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 5f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/27_f_precision} &
+	\input{cards/28_f_accuracy} \\
+	\vspace{5mm} & \\
+	\input{cards/29_f_gaussian} &
+	\input{cards/30_f_Standard_deviation_diagram} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 6b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/28_b_rwu}&
+	\input{cards/27_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/30_b_rwu} &
+	\input{cards/29_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 6f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/31_f_boxplot} &
+	\input{cards/32_f_Fehlerfortpflanzung2} \\
+	\vspace{5mm} & \\
+	\input{cards/33_f_resistor_divider2} &
+	\input{cards/34_f_rc_hpf2} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 7b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/32_b_rwu}&
+	\input{cards/31_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/34_b_rwu} &
+	\input{cards/33_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 7f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/35_f_rc_lpf2} &
+	\input{cards/36_f_rc_bpf} \\
+	\vspace{5mm} & \\
+	\input{cards/37_f_rc_bsf} &
+	\input{cards/38_f_pwm3} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 8b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/36_b_rwu}&
+	\input{cards/35_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/38_b_rwu} &
+	\input{cards/37_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 8f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/39_f_sample_and_hold2} &
+	\input{cards/40_f_adc_general} \\
+	\vspace{5mm} & \\
+	\input{cards/41_f_adc_flash} &
+	\input{cards/42_f_adc_dualSlope} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 9b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/40_b_rwu}&
+	\input{cards/39_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/42_b_rwu} &
+	\input{cards/41_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 9f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/43_f_adc_successiveApprox} &
+	\input{cards/44_f_adc_deltaSigma} \\
+	\vspace{5mm} & \\
+	\input{cards/45_f_dac_general} &
+	\input{cards/46_f_dac_flash} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 10b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/44_b_rwu}&
+	\input{cards/43_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/46_b_rwu} &
+	\input{cards/45_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 10f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/47_f_dac_r2rLadder} &
+	\input{cards/48_f_noninverting_amplifier2} \\
+	\vspace{5mm} & \\
+	\input{cards/49_f_inverting_amplifier2} &
+	\input{cards/50_f_integrator} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 11b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/48_b_rwu}&
+	\input{cards/47_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/50_b_rwu} &
+	\input{cards/49_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 11f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/51_f_differential_amplifier2} &
+	\input{cards/52_f_summing_amplifier} \\
+	\vspace{5mm} & \\
+	\input{cards/53_f_transimpedance_amplifier} &
+	\input{cards/54_f_instrument_amp} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 12b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/52_b_rwu}&
+	\input{cards/51_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/54_b_rwu} &
+	\input{cards/53_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 12f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/55_f_0orderSys} &
+	\input{cards/56_f_1orderSys} \\
+	\vspace{5mm} & \\
+	\input{cards/57_f_deltaFunc} &
+	\input{cards/58_f_sigmaFunc} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 13b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/56_b_rwu}&
+	\input{cards/55_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/58_b_rwu} &
+	\input{cards/57_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 13f %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/59_f_step_response2} &
+	\input{cards/60_f_ramp_response} \\
+	\vspace{5mm} & \\
+	\input{cards/11_f_SI_Units} &
+	\input{cards/11_f_SI_Units} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+%%%%%%%%%%%%%%%
+%%  SEITE 13b %%
+%%%%%%%%%%%%%%%
+	\noindent
+	\begin{table}[t!]
+	\centering
+	\begin{tabular}[t]{@{}cc@{}}
+	\vspace{0.5cm} &\\
+	\input{cards/60_b_rwu}&
+	\input{cards/59_b_rwu} \\
+	\vspace{0.5cm} &\\
+	\input{cards/11_b_rwu} &
+	\input{cards/11_b_rwu} \\
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+
+
+\end{center}
+\end{document}

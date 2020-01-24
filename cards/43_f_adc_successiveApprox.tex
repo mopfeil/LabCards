@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/adc_successiveApprox.png}{0mm}
+		\cardtypeCircuit
+		\cardtitle{ADC - successive Approximation}
+		\cardcontent{\fontsize{9}{10}\selectfont In successive approximation, the comparison is performed step by step and is repeated continuously, whereby the reference voltage is changed in such a way that it approaches the input voltage more and more. 	
+		}
+		{A Successive Approximation Register (SAR) is added to the circuit		This register counts by trying all values of bits starting with the MSB and finishing at the LSB. The logic monitors the comparators output to see if the binary count is greater or less than the analog signal input and adjusts the bits accordingly (max. 15-20Bit resolution).\\			Advantages: Capable of high speed and reliable, medium accuracy, good tradeoff between speed and cost,	output in serial or parallel format. \\			Disadvantages: Speed limited to \textasciitilde5Msps, higher resolution will be slower.		}
+		\cardprice{33}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}

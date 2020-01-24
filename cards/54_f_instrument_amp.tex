@@ -1,0 +1,11 @@
+	\begin{tikzpicture}
+		\cardbackground{images/instrument_amp.png}{0mm}
+		\cardtypeOPV
+		\cardtitle{Instrumentation Amplifier}
+		\cardcontent{\fontsize{9}{10}\selectfont This circuit consists of a differential amplifier on the right ($G=\frac{R_{3}}{R_{2}}$) and two non-inverting amplifiers on the left($G=1+\frac{R_{1}}{R_{Gain}}$). The advantages are a high input impedance and a increased common-mode rejection ratio(CMRR).
+		}
+		{Putting the gain resistor between the two inverting inputs (instead of 2 resistors to ground) increases the differential-mode gain of the buffer pair while leaving the common-mode gain equal to 1. They are very effective at extracting a weak differential signal out of a large common mode signal. Available as integrated circuit with fixed and factory trimmed resistors. 	\\[5pt]				$U_{a1} = U_{1}+\frac{R1}{R_{gain}}(U_{1}-U_{2})$\\		$U_{a2} = U_{2}+\frac{R1}{R_{gain}}(U_{2}-U_{1})$\\		$U_{a} = \frac{R3}{R2}(U_{a2}-U_{a1}) = \frac{R3}{R2}(1+\frac{2R_{1}}{R_{Gain}})(U_{2}-U_{1})$\\				}
+		\cardprice{44}
+		\cardborder
+%		\carddebug
+	\end{tikzpicture}
